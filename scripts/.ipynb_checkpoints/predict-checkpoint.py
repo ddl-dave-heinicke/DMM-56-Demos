@@ -1,5 +1,5 @@
 import pickle
-# import numpy as np
+import numpy as np
 import pandas as pd
 # from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -23,13 +23,15 @@ with open("./models/ChurnBinaryClassifier.pkl", 'rb') as f_in:
     f_in.close()  # close the file 
 
 
-with open("./models/scaler.bin", 'rb') as f_in:
-    scaler = pickle.load(f_in)
-    f_in.close()
+# with open("./models/scaler.bin", 'rb') as f_in:
+#     scaler = pickle.load(f_in)
+#     f_in.close()
     
 def predict(dropperc, mins, consecmonths, income, age, customer_id=None):
 
-    transformed_data = scaler.transform(pd.DataFrame([[dropperc, mins, consecmonths, income, age]],columns=["dropperc", "mins", "consecmonths", "income", "age"]))
+    # transformed_data = scaler.transform(pd.DataFrame([[dropperc, mins, consecmonths, income, age]],columns=["dropperc", "mins", "consecmonths", "income", "age"]))
+    
+    transformed_data = np.array([dropperc, mins, consecmonths, income, age])
     
     prediction = loaded_model.predict(transformed_data)
     print(prediction)
