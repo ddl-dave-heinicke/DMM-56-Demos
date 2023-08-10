@@ -42,8 +42,11 @@ In the scripts folder, open up "predict.py"
 This script has two parts:
 
 (1) Initiate the Prediction Capture Client, so that Domino Model Monitoring knows what prediction data to capture
+
 (2) A predict function that:
  (a) Loads our trained model
  (b) Creates a prediction identifier if one does not already exist
  (c) Scores the input data
  (d) Returns a json of the model preicted churn probabilities
+ 
+Read through the script, but no need to change anything, it is ready to deploy as a Model API.
