@@ -23,17 +23,15 @@ with open("./models/ChurnBinaryClassifier.pkl", 'rb') as f_in:
     f_in.close()  # close the file 
 
 
-# with open("./artifacts/scaler.bin", 'rb') as f_in:
-#     scaler = pickle.load(f_in)
-#     f_in.close()
-
-scaler = StandardScaler()
+with open("./models/scaler.bin", 'rb') as f_in:
+    scaler = pickle.load(f_in)
+    f_in.close()
     
 def predict(dropperc, mins, consecmonths, income, age, customer_id=None):
 
     transformed_data = scaler.transform(pd.DataFrame([[dropperc, mins, consecmonths, income, age]],columns=["dropperc", "mins", "consecmonths", "income", "age"]))
     
-    prediction = loaded_model.predict([dropperc, mins, consecmonths, income, age])
+    prediction = loaded_model.predict(transformed_data)
     print(prediction)
     
     # Create the unique column ID if it does not exist

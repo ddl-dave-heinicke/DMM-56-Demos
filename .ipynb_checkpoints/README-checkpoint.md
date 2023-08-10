@@ -50,3 +50,12 @@ This script has two parts:
  (d) Returns a json of the model preicted churn probabilities
  
 Read through the script, but no need to change anything, it is ready to deploy as a Model API.
+
+Customer Churn Prediction
+
+Sample Tests
+{ "data": { "dropperc": 1000, "mins": 941, "consecmonths": 29, "income": 35000, "age": 35 } }
+
+scripts/predict.py
+
+predict
