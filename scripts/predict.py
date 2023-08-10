@@ -33,7 +33,7 @@ def predict(dropperc, mins, consecmonths, income, age, customer_id=None):
 
     transformed_data = scaler.transform(pd.DataFrame([[dropperc, mins, consecmonths, income, age]],columns=["dropperc", "mins", "consecmonths", "income", "age"]))
     
-    prediction = loaded_model.predict(transformed_data)
+    prediction = loaded_model.predict([dropperc, mins, consecmonths, income, age])
     print(prediction)
     
     # Create the unique column ID if it does not exist
