@@ -24,5 +24,5 @@ Domino Model Monitoring needs the dataset your model was trained on to establish
 TrainingSet docs here:
 https://docs.dominodatalab.com/en/latest/api_guide/440de9/trainingsets-use-cases/
 
-This example model was trained on **ChurnTrainingDataPP.csv**
+This example model was trained on **Test&TrainData/churnTrainingData.csv**
 
