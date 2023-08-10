@@ -13,3 +13,16 @@ Setting up Model Monitoring will differ slightly depending on whether the model 
 
 ## Set Up Monitoring for Domino Model APIs
 
+For setting up model monoitoring on a Domino Model API, this tutorial assumes you already have a trained model in your project ready to go.
+
+This example's model is here: models/ChurnBinaryClassifier.pkl
+
+### (1) Register your training dataet
+
+Domino Model Monitoring needs the dataset your model was trained on to establish a reference baseline for input drift detection. This baseline dataset is registered in Domino as a TrainingSet - a versioned set of data, column information, and other metadata.
+
+TrainingSet docs here:
+https://docs.dominodatalab.com/en/latest/api_guide/440de9/trainingsets-use-cases/
+
+This example model was trained on **ChurnTrainingDataPP.csv**
+
