@@ -26,3 +26,16 @@ https://docs.dominodatalab.com/en/latest/api_guide/440de9/trainingsets-use-cases
 
 This example model was trained on **Test&TrainData/churnTrainingData.csv**
 
+Open up the Notebook "CreateTrainingSet.ipynb" and run all of the cells.
+
+Once the notebook has been run, **churnTrainingData.csv** is registered for use with Domino Model Mnitoring. 
+
+
+### (2) Create your Model API
+
+Next, we'll deploy our model as a Domino Model API, and have Domino capture the prediction data sent to that API for monitoring.
+
+Since we'll aslo want to monitor our model's predition accuracy over time, we'll want to create a unique identifier for each prediction. When we get ground truth labels back later, we'll use the values in the unique prediction identifier column to join actual outcomes up with the model's predictions and track accuracy, or Model Quality.
+
+In the scripts folder, open up "predict.py"
+
